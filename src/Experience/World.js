@@ -40,6 +40,8 @@ export default class World
 
     resize()
     {
+        if(this.smoke)
+            this.smoke.resize()
     }
 
     update()
