@@ -16,7 +16,7 @@ export default class Camera
         this.scene = this.experience.scene
 
         // Set up
-        this.mode = 'debug' // defaultCamera \ debugCamera
+        this.mode = 'default' // default \ debug
 
         this.setInstance()
         this.setModes()
@@ -25,7 +25,7 @@ export default class Camera
     setInstance()
     {
         // Set up
-        this.instance = new THREE.PerspectiveCamera(25, this.config.width / this.config.height, 0.1, 150)
+        this.instance = new THREE.PerspectiveCamera(55, this.config.width / this.config.height, 0.1, 150)
         this.instance.rotation.reorder('YXZ')
 
         this.scene.add(this.instance)
@@ -38,6 +38,7 @@ export default class Camera
         // Default
         this.modes.default = {}
         this.modes.default.instance = this.instance.clone()
+        this.modes.default.instance.position.z = 5
         this.modes.default.instance.rotation.reorder('YXZ')
 
         // Debug
