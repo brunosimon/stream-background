@@ -25,7 +25,7 @@ export default class Particles
                 .addInput(
                     this,
                     'count',
-                    { min: 100, max: 500000, step: 100 }
+                    { min: 100, max: 100000, step: 100 }
                 )
                 .on('change', () =>
                 {
@@ -82,9 +82,9 @@ export default class Particles
             {
                 uTime: { value: 0 },
                 uSize: { value: 25 },
-                uProgressSpeed: { value: 0.00005 },
-                uPerlinFrequency: { value: 0.14 },
-                uPerlinMultiplier: { value: 5 },
+                uProgressSpeed: { value: 0.000015 },
+                uPerlinFrequency: { value: 0.17 },
+                uPerlinMultiplier: { value: 1 },
                 uMask: { value: this.resources.items.particleMaskTexture },
             },
             vertexShader: vertexShader,
@@ -102,19 +102,19 @@ export default class Particles
             this.debugFolder.addInput(
                 this.material.uniforms.uProgressSpeed,
                 'value',
-                { label: 'uProgressSpeed', min: 0,  max: 0.0002, step: 0.000001 }
+                { label: 'uProgressSpeed', min: 0,  max: 0.00005, step: 0.000001 }
             )
 
             this.debugFolder.addInput(
                 this.material.uniforms.uPerlinFrequency,
                 'value',
-                { label: 'uPerlinFrequency', min: 0,  max: 1, step: 0.01 }
+                { label: 'uPerlinFrequency', min: 0,  max: 0.5, step: 0.01 }
             )
 
             this.debugFolder.addInput(
                 this.material.uniforms.uPerlinMultiplier,
                 'value',
-                { label: 'uPerlinMultiplier', min: 0,  max: 20, step: 0.1 }
+                { label: 'uPerlinMultiplier', min: 0,  max: 2, step: 0.1 }
             )
         }
     }

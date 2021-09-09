@@ -2,6 +2,7 @@ import Experience from './Experience.js'
 import Gradient from './Gradient.js'
 import Smoke from './Smoke.js'
 import Particles from './Particles.js'
+import Vignette from './Vignette.js'
 
 export default class World
 {
@@ -17,8 +18,9 @@ export default class World
             if(_group.name === 'base')
             {
                 this.setGradient()
-                // this.setSmoke()
+                this.setSmoke()
                 this.setParticles()
+                this.setVignette()
             }
         })
     }
@@ -36,6 +38,11 @@ export default class World
     setParticles()
     {
         this.particles = new Particles()
+    }
+
+    setVignette()
+    {
+        this.vignette = new Vignette()
     }
 
     resize()
