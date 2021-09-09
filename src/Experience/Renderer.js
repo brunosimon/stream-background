@@ -2,6 +2,9 @@ import * as THREE from 'three'
 import Experience from './Experience.js'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
+import finalVertexShader from './shaders/final/vertex.glsl'
+import finalFragmentShader from './shaders/final/fragment.glsl'
 
 export default class Renderer
 {
@@ -68,6 +71,14 @@ export default class Renderer
          * Render pass
          */
         this.postProcess.renderPass = new RenderPass(this.scene, this.camera.instance)
+        this.postProcess.finalPass = new ShaderPass({
+            vertexShader: finalVertexShader,
+            fragmentShader: finalFragmentShader,
+            uniforms:
+            {
+                tDiffuse: { value: null }
+            }
+        })
 
         /**
          * Effect composer
@@ -90,6 +101,7 @@ export default class Renderer
         this.postProcess.composer.setPixelRatio(this.config.pixelRatio)
 
         this.postProcess.composer.addPass(this.postProcess.renderPass)
+        this.postProcess.composer.addPass(this.postProcess.finalPass)
     }
 
     resize()

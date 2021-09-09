@@ -64,7 +64,7 @@ export default class Vignette
             {
                 uColor: { value: this.color.instance },
                 uOffset: { value: 0 },
-                uMultiplier: { value: 1 }
+                uMultiplier: { value: 1.4 }
             },
             vertexShader: vertexShader,
             fragmentShader: fragmentShader

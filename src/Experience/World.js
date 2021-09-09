@@ -19,8 +19,8 @@ export default class World
             {
                 this.setGradient()
                 this.setSmoke()
-                this.setParticles()
                 this.setVignette()
+                this.setParticles()
             }
         })
     }
