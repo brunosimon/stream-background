@@ -46,11 +46,12 @@ module.exports = {
 
             // CSS
             {
-                test: /\.css$/,
+                test: /\.styl$/,
                 use:
                 [
                     MiniCSSExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
+                    'stylus-loader'
                 ]
             },
 

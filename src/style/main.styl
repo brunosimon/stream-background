@@ -1,0 +1,303 @@
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+
+html
+body
+    overflow hidden
+
+.experience
+    position fixed
+    width 100vw
+    height 100vh
+
+.blocks
+    position relative
+    width 1920px
+    height 1080px
+    opacity 0
+
+    &.is-visible
+        opacity 1
+        transition opacity 1s
+
+    &.is-be-right-back
+        .screen
+            display none
+
+        .commands
+            top 30px
+            left 1340px
+            width 550px
+            height 342px
+            
+            .content
+                padding-left 40px
+
+        .chat
+            top 404px
+            left 1340px
+            width 550px
+            height 646px
+
+        .links
+            flex-wrap wrap
+            align-items center
+            justify-content flex-start
+            left 30px
+            bottom 30px
+            width 1280px
+
+            .link
+                margin-top 30px
+                margin-right 30px
+
+        .waiting-title
+            display flex
+            flex-direction column
+            align-items flex-start
+            justify-content center
+            position absolute
+            top 30px
+            left 30px
+            height 840px
+            font-family Montserrat
+            color #ffffff
+
+            .main
+                font-weight bold
+                font-size 120px
+                line-height 146px
+                text-transform uppercase
+                -webkit-font-smoothing antialiased
+
+            .sub
+                font-size 48px
+                font-weight normal
+
+    &.is-1-screen
+        .screen
+            top 30px
+            left 30px
+            width 1280px
+            height 720px
+
+            &.is-screen-2
+                display none
+
+        .commands
+            top 30px
+            left 1340px
+            width 550px
+            height 342px
+            
+            .content
+                padding-left 40px
+
+        .chat
+            top 404px
+            left 1340px
+            width 550px
+            height 646px
+
+        .links
+            flex-wrap wrap
+            align-items center
+            justify-content space-around
+            left 30px
+            bottom 30px
+            width 1280px
+            height 270px
+            padding-top 30px
+            padding-bottom 30px
+
+    &.is-2-screen
+        .screen
+            &.is-screen-1
+                top 30px
+                left 30px
+                width 880px
+                height 495px
+
+            &.is-screen-2
+                bottom 30px
+                left 30px
+                width 880px
+                height 495px
+
+        .commands
+            top 30px
+            right 30px
+            width 350px
+            height 480px
+
+            .optional
+                display none
+            
+            .content
+                padding-left 30px
+
+        .chat
+            top 30px
+            left 940px
+            width 578px
+            height 1020px
+
+        .links
+            right 30px
+            top 540px
+            width 350px
+            height 270px
+
+            .link
+                margin-bottom 30px
+
+    .screen
+        position absolute
+        box-shadow 20px 20px 50px rgba(0, 0, 0, 0.35)
+
+    .commands
+        position absolute
+        background #00000033
+        overflow hidden
+
+        .title
+            position absolute
+            bottom 10px
+            right -2px
+            font-family Montserrat
+            font-style normal
+            font-weight 900
+            font-size 56px
+            text-align right
+            color #ffffff06
+            text-transform uppercase
+
+        .shadow
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            box-shadow inset -10px 20px 60px rgba(0, 0, 0, 0.25)
+
+        .content
+            display flex
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            font-family Fira Mono
+            font-style normal
+            font-weight 500
+            font-size 22px
+            line-height 26px
+            color #ffffff66
+            align-items center
+            justify-content flex-start
+
+            .highlight
+                color #ffffff
+
+    .chat
+        position absolute
+        background #00000033
+        overflow hidden
+
+        .title
+            position absolute
+            bottom 10px
+            right -4px
+            font-family Montserrat
+            font-style normal
+            font-weight 900
+            font-size 96px
+            line-height 90px
+            text-align right
+            color #ffffff06
+            text-transform uppercase
+
+        .shadow
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            box-shadow inset -10px 20px 60px rgba(0, 0, 0, 0.25)
+
+    .links
+        position absolute
+        display flex
+        flex-wrap wrap
+        align-items center
+        justify-content space-around
+
+        .link
+            display flex
+            position relative
+            width 342px
+            height 60px
+            // margin 30px
+            align-items center
+            font-family Montserrat
+            font-style normal
+            font-weight bold
+            font-size 24px
+            line-height 29px
+            color #ffffff
+
+            &::after
+                content ''
+                position absolute
+                top 0
+                left 0
+                width 10px
+                height 100%
+                background #705DF2
+
+            .background
+                position absolute
+                top 0
+                left 0
+                width 100%
+                height 100%
+                background linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.18) 100%)
+                box-shadow 10px 10px 20px rgba(0, 0, 0, 0.35)
+
+            .icon
+                margin-left 35px
+                margin-right 25px
+
+                &.is-discord
+                    display block
+                    width 36px
+                    height 28px
+                    background url(../icons/discord.svg)
+
+                &.is-youtube
+                    display block
+                    width 38px
+                    height 28px
+                    background url(../icons/youtube.svg)
+
+                &.is-github
+                    display block
+                    width 34px
+                    height 33px
+                    background url(../icons/github.svg)
+
+                &.is-twitter
+                    display block
+                    width 37px
+                    height 32px
+                    background url(../icons/twitter.svg)
+
+                &.is-link
+                    display block
+                    width 20px
+                    height 32px
+                    background url(../icons/link.svg)
+
+        

@@ -1,7 +1,5 @@
-import './style.css'
-import Experience from './Experience/Experience.js'
+import './style/main.styl'
+import Application from './javascript/Application.js'
 
-const experience = new Experience({
-    targetElement: document.querySelector('.experience')
-})
+const application = new Application()
 
